@@ -1,0 +1,246 @@
+{
+  "standard": "ISO 266",
+  "octave_fraction": 3,
+  "reference_frequency": 1000.0,
+  "description": "1/3 octave band center frequencies per ISO 266 / IEC 61260, covering ~10 Hz to ~20 kHz",
+  "bands": [
+    {
+      "band_number": -20,
+      "center_frequency": 9.8431332,
+      "lower_frequency": 8.76923475,
+      "upper_frequency": 11.048543,
+      "nominal": "9.84 Hz"
+    },
+    {
+      "band_number": -19,
+      "center_frequency": 12.401571,
+      "lower_frequency": 11.048543,
+      "upper_frequency": 13.920292,
+      "nominal": "12.4 Hz"
+    },
+    {
+      "band_number": -18,
+      "center_frequency": 15.625,
+      "lower_frequency": 13.920292,
+      "upper_frequency": 17.53847,
+      "nominal": "15.6 Hz"
+    },
+    {
+      "band_number": -17,
+      "center_frequency": 19.686266,
+      "lower_frequency": 17.53847,
+      "upper_frequency": 22.097087,
+      "nominal": "19.7 Hz"
+    },
+    {
+      "band_number": -16,
+      "center_frequency": 24.803141,
+      "lower_frequency": 22.097087,
+      "upper_frequency": 27.840585,
+      "nominal": "24.8 Hz"
+    },
+    {
+      "band_number": -15,
+      "center_frequency": 31.25,
+      "lower_frequency": 27.840585,
+      "upper_frequency": 35.076939,
+      "nominal": "31.2 Hz"
+    },
+    {
+      "band_number": -14,
+      "center_frequency": 39.372533,
+      "lower_frequency": 35.076939,
+      "upper_frequency": 44.194174,
+      "nominal": "39.4 Hz"
+    },
+    {
+      "band_number": -13,
+      "center_frequency": 49.606283,
+      "lower_frequency": 44.194174,
+      "upper_frequency": 55.68117,
+      "nominal": "49.6 Hz"
+    },
+    {
+      "band_number": -12,
+      "center_frequency": 62.5,
+      "lower_frequency": 55.68117,
+      "upper_frequency": 70.153878,
+      "nominal": "62.5 Hz"
+    },
+    {
+      "band_number": -11,
+      "center_frequency": 78.745066,
+      "lower_frequency": 70.153878,
+      "upper_frequency": 88.388348,
+      "nominal": "78.7 Hz"
+    },
+    {
+      "band_number": -10,
+      "center_frequency": 99.212566,
+      "lower_frequency": 88.388348,
+      "upper_frequency": 111.36234,
+      "nominal": "99.2 Hz"
+    },
+    {
+      "band_number": -9,
+      "center_frequency": 125.0,
+      "lower_frequency": 111.36234,
+      "upper_frequency": 140.307756,
+      "nominal": "125 Hz"
+    },
+    {
+      "band_number": -8,
+      "center_frequency": 157.490131,
+      "lower_frequency": 140.307756,
+      "upper_frequency": 176.776695,
+      "nominal": "157 Hz"
+    },
+    {
+      "band_number": -7,
+      "center_frequency": 198.425131,
+      "lower_frequency": 176.776695,
+      "upper_frequency": 222.72468,
+      "nominal": "198 Hz"
+    },
+    {
+      "band_number": -6,
+      "center_frequency": 250.0,
+      "lower_frequency": 222.72468,
+      "upper_frequency": 280.615512,
+      "nominal": "250 Hz"
+    },
+    {
+      "band_number": -5,
+      "center_frequency": 314.980262,
+      "lower_frequency": 280.615512,
+      "upper_frequency": 353.553391,
+      "nominal": "315 Hz"
+    },
+    {
+      "band_number": -4,
+      "center_frequency": 396.850263,
+      "lower_frequency": 353.553391,
+      "upper_frequency": 445.449359,
+      "nominal": "397 Hz"
+    },
+    {
+      "band_number": -3,
+      "center_frequency": 500.0,
+      "lower_frequency": 445.449359,
+      "upper_frequency": 561.231024,
+      "nominal": "500 Hz"
+    },
+    {
+      "band_number": -2,
+      "center_frequency": 629.960525,
+      "lower_frequency": 561.231024,
+      "upper_frequency": 707.106781,
+      "nominal": "630 Hz"
+    },
+    {
+      "band_number": -1,
+      "center_frequency": 793.700526,
+      "lower_frequency": 707.106781,
+      "upper_frequency": 890.898718,
+      "nominal": "794 Hz"
+    },
+    {
+      "band_number": 0,
+      "center_frequency": 1000.0,
+      "lower_frequency": 890.898718,
+      "upper_frequency": 1122.462048,
+      "nominal": "1000 Hz"
+    },
+    {
+      "band_number": 1,
+      "center_frequency": 1259.92105,
+      "lower_frequency": 1122.462048,
+      "upper_frequency": 1414.213562,
+      "nominal": "1260 Hz"
+    },
+    {
+      "band_number": 2,
+      "center_frequency": 1587.401052,
+      "lower_frequency": 1414.213562,
+      "upper_frequency": 1781.797436,
+      "nominal": "1587 Hz"
+    },
+    {
+      "band_number": 3,
+      "center_frequency": 2000.0,
+      "lower_frequency": 1781.797436,
+      "upper_frequency": 2244.924097,
+      "nominal": "2000 Hz"
+    },
+    {
+      "band_number": 4,
+      "center_frequency": 2519.8421,
+      "lower_frequency": 2244.924097,
+      "upper_frequency": 2828.427125,
+      "nominal": "2520 Hz"
+    },
+    {
+      "band_number": 5,
+      "center_frequency": 3174.802104,
+      "lower_frequency": 2828.427125,
+      "upper_frequency": 3563.594873,
+      "nominal": "3175 Hz"
+    },
+    {
+      "band_number": 6,
+      "center_frequency": 4000.0,
+      "lower_frequency": 3563.594873,
+      "upper_frequency": 4489.848193,
+      "nominal": "4000 Hz"
+    },
+    {
+      "band_number": 7,
+      "center_frequency": 5039.6842,
+      "lower_frequency": 4489.848193,
+      "upper_frequency": 5656.854249,
+      "nominal": "5040 Hz"
+    },
+    {
+      "band_number": 8,
+      "center_frequency": 6349.604208,
+      "lower_frequency": 5656.854249,
+      "upper_frequency": 7127.189745,
+      "nominal": "6350 Hz"
+    },
+    {
+      "band_number": 9,
+      "center_frequency": 8000.0,
+      "lower_frequency": 7127.189745,
+      "upper_frequency": 8979.696386,
+      "nominal": "8000 Hz"
+    },
+    {
+      "band_number": 10,
+      "center_frequency": 10079.368399,
+      "lower_frequency": 8979.696386,
+      "upper_frequency": 11313.708499,
+      "nominal": "10079 Hz"
+    },
+    {
+      "band_number": 11,
+      "center_frequency": 12699.208416,
+      "lower_frequency": 11313.708499,
+      "upper_frequency": 14254.37949,
+      "nominal": "12699 Hz"
+    },
+    {
+      "band_number": 12,
+      "center_frequency": 16000.0,
+      "lower_frequency": 14254.37949,
+      "upper_frequency": 17959.392773,
+      "nominal": "16000 Hz"
+    },
+    {
+      "band_number": 13,
+      "center_frequency": 20158.736798,
+      "lower_frequency": 17959.392773,
+      "upper_frequency": 22627.416998,
+      "nominal": "20159 Hz"
+    }
+  ]
+}

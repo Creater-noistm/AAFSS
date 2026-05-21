@@ -1,0 +1,19 @@
+<UserControl x:Class="AAFSS.App.Views.StatisticalView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Padding="8,4" Background="{DynamicResource PanelHeaderBackgroundBrush}">
+            <TextBlock Text="统计分布分析" FontSize="13" FontWeight="SemiBold" />
+        </Border>
+
+        <TextBlock Grid.Row="1" Text="请执行分布拟合分析"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Foreground="Gray" FontStyle="Italic" FontSize="14" />
+    </Grid>
+</UserControl>

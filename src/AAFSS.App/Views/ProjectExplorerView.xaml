@@ -1,0 +1,67 @@
+<UserControl x:Class="AAFSS.App.Views.ProjectExplorerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:AAFSS.App.ViewModels"
+             xmlns:conv="clr-namespace:AAFSS.App.Converters"
+             xmlns:beh="clr-namespace:AAFSS.App.Behaviors">
+
+    <UserControl.Resources>
+        <conv:StatusToColorConverter x:Key="StatusToColor" />
+        <conv:StatusToTextConverter x:Key="StatusToText" />
+
+        <!-- TreeView item style with status indicator -->
+        <Style x:Key="ProjectTreeItemStyle" TargetType="TreeViewItem">
+            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+            <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+
+        <!-- Node type icons -->
+        <DataTemplate x:Key="NodeIconTemplate">
+            <Grid Width="16" Height="16" Margin="0,0,4,0">
+                <Ellipse Width="8" Height="8" Fill="{Binding Status, Converter={StaticResource StatusToColor}}"
+                         ToolTip="{Binding Status, Converter={StaticResource StatusToText}}" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Toolbar -->
+        <ToolBar Grid.Row="0" ToolBarTray.IsLocked="True">
+            <Button Content="+" ToolTip="全部展开" Command="{Binding ExpandAllCommand}"
+                    Width="24" Height="24" />
+            <Button Content="-" ToolTip="全部折叠" Command="{Binding CollapseAllCommand}"
+                    Width="24" Height="24" />
+            <Separator />
+            <Button Content="⟳" ToolTip="刷新" Command="{Binding LoadProjectTreeCommand}"
+                    Width="24" Height="24" />
+        </ToolBar>
+
+        <!-- Tree -->
+        <TreeView Grid.Row="1" x:Name="ProjectTree"
+                  ItemsSource="{Binding Nodes}"
+                  ItemContainerStyle="{StaticResource ProjectTreeItemStyle}"
+                  BorderThickness="0"
+                  beh:DoubleClickBehavior.Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.OpenDocumentCommand}">
+
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type vm:TreeNodeViewModel}"
+                                          ItemsSource="{Binding Children}">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Width="16" Height="16" Margin="0,0,4,0">
+                            <Ellipse Width="8" Height="8"
+                                     Fill="{Binding Status, Converter={StaticResource StatusToColor}}"
+                                     ToolTip="{Binding Status, Converter={StaticResource StatusToText}}" />
+                        </Grid>
+                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center" />
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </Grid>
+</UserControl>

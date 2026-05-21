@@ -1,0 +1,84 @@
+{
+  "description": "Common aerospace materials S-N curve parameters for acoustic fatigue analysis",
+  "reference": "MIL-HDBK-5J / MMPDS-17 / SAE Fatigue Design Handbook",
+  "note": "All stress values in MPa. Kt = 1.0 corresponds to unnotched (smooth) specimen baseline.",
+  "materials": [
+    {
+      "material_name": "2024-T3 Aluminum",
+      "fatigue_strength_coefficient": 1103.0,
+      "fatigue_strength_exponent": -0.124,
+      "fatigue_ductility_coefficient": 0.22,
+      "fatigue_ductility_exponent": -0.59,
+      "endurance_limit": 138.0,
+      "elastic_modulus": 73.1,
+      "kt": 1.0,
+      "description": "Common aircraft fuselage skin and lower wing skin aluminum alloy. Good fatigue resistance with moderate strength."
+    },
+    {
+      "material_name": "7075-T6 Aluminum",
+      "fatigue_strength_coefficient": 1300.0,
+      "fatigue_strength_exponent": -0.148,
+      "fatigue_ductility_coefficient": 0.19,
+      "fatigue_ductility_exponent": -0.52,
+      "endurance_limit": 159.0,
+      "elastic_modulus": 71.7,
+      "kt": 1.0,
+      "description": "High-strength aluminum alloy used in upper wing skins, bulkheads, and fuselage frames. Higher strength than 2024-T3 but lower fracture toughness."
+    },
+    {
+      "material_name": "Ti-6Al-4V Titanium",
+      "fatigue_strength_coefficient": 1724.0,
+      "fatigue_strength_exponent": -0.095,
+      "fatigue_ductility_coefficient": 0.30,
+      "fatigue_ductility_exponent": -0.69,
+      "endurance_limit": 510.0,
+      "elastic_modulus": 113.8,
+      "kt": 1.0,
+      "description": "Aerospace titanium alloy with excellent strength-to-weight ratio. Used in engine mounts, nacelle structures, and high-temperature acoustic environments up to 400°C."
+    },
+    {
+      "material_name": "4340 Steel",
+      "fatigue_strength_coefficient": 1655.0,
+      "fatigue_strength_exponent": -0.076,
+      "fatigue_ductility_coefficient": 0.73,
+      "fatigue_ductility_exponent": -0.62,
+      "endurance_limit": 620.0,
+      "elastic_modulus": 207.0,
+      "kt": 1.0,
+      "description": "Medium-carbon low-alloy steel. Used in landing gear components and high-strength structural fittings. Good hardenability and fatigue resistance."
+    },
+    {
+      "material_name": "300M Steel",
+      "fatigue_strength_coefficient": 1862.0,
+      "fatigue_strength_exponent": -0.065,
+      "fatigue_ductility_coefficient": 0.82,
+      "fatigue_ductility_exponent": -0.70,
+      "endurance_limit": 690.0,
+      "elastic_modulus": 207.0,
+      "kt": 1.0,
+      "description": "Ultra-high-strength silicon-modified 4340 steel. Used in landing gear, flap tracks, and critical structural members. Superior strength and toughness."
+    },
+    {
+      "material_name": "Inconel 718",
+      "fatigue_strength_coefficient": 2096.0,
+      "fatigue_strength_exponent": -0.122,
+      "fatigue_ductility_coefficient": 0.11,
+      "fatigue_ductility_exponent": -0.60,
+      "endurance_limit": 400.0,
+      "elastic_modulus": 208.0,
+      "kt": 1.0,
+      "description": "Nickel-based superalloy for high-temperature acoustic environments (up to 650°C). Used in engine exhaust structures, afterburner liners, and hot-section acoustic panels."
+    },
+    {
+      "material_name": "17-4PH Stainless",
+      "fatigue_strength_coefficient": 1482.0,
+      "fatigue_strength_exponent": -0.115,
+      "fatigue_ductility_coefficient": 0.35,
+      "fatigue_ductility_exponent": -0.57,
+      "endurance_limit": 480.0,
+      "elastic_modulus": 196.0,
+      "kt": 1.0,
+      "description": "Precipitation-hardening martensitic stainless steel. Used in actuator components, fasteners, and moderately elevated temperature applications. Good corrosion resistance."
+    }
+  ]
+}

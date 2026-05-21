@@ -1,0 +1,53 @@
+<UserControl x:Class="AAFSS.App.Views.StatusBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StatusBar Background="{DynamicResource StatusBarBackgroundBrush}">
+        <StatusBar.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="120" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </ItemsPanelTemplate>
+        </StatusBar.ItemsPanel>
+
+        <StatusBarItem Grid.Column="0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding StatusText}" Margin="8,0" />
+                <Separator Style="{StaticResource {x:Static StatusBar.SeparatorStyleKey}}" />
+                <TextBlock Text="{Binding ProcessingLabel}" Margin="4,0"
+                           Foreground="DodgerBlue"
+                           Visibility="{Binding IsProcessing, Converter={StaticResource BoolToVisibility}}" />
+            </StackPanel>
+        </StatusBarItem>
+
+        <StatusBarItem Grid.Column="1">
+            <StackPanel Orientation="Horizontal" Margin="4,0">
+                <TextBlock Text="Python: " Foreground="Gray" FontSize="11" />
+                <TextBlock Text="{Binding PythonVersion}" Foreground="Green" FontSize="11" />
+            </StackPanel>
+        </StatusBarItem>
+
+        <StatusBarItem Grid.Column="2">
+            <StackPanel Orientation="Horizontal" Margin="8,0">
+                <TextBlock Text="上次保存: " Foreground="Gray" FontSize="11" />
+                <TextBlock Text="{Binding LastSavedTime}" FontSize="11" />
+            </StackPanel>
+        </StatusBarItem>
+
+        <StatusBarItem Grid.Column="3">
+            <Separator />
+        </StatusBarItem>
+
+        <StatusBarItem Grid.Column="4">
+            <TextBlock Text="{Binding MemoryUsageMB, StringFormat='内存: {0:F0} MB'}"
+                       FontSize="11" Margin="8,0" />
+        </StatusBarItem>
+    </StatusBar>
+</UserControl>

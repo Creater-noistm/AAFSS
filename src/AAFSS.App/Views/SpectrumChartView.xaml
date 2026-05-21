@@ -1,0 +1,49 @@
+<UserControl x:Class="AAFSS.App.Views.SpectrumChartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:conv="clr-namespace:AAFSS.App.Converters"
+             xmlns:sp="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF">
+
+    <UserControl.Resources>
+        <conv:BoolToVisibilityConverter x:Key="BoolToVisibility" />
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Chart Info -->
+        <Border Grid.Row="0" Padding="8,4" Background="{DynamicResource PanelHeaderBackgroundBrush}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding ChartTitle}" FontSize="13" FontWeight="SemiBold" Margin="0,0,16,0" />
+                <TextBlock Text="{Binding Oaspl, StringFormat='OASPL: {0:F1} dB'}"
+                           FontSize="11" Foreground="Gray" Margin="0,0,16,0" />
+                <TextBlock Text="{Binding SpectrumType, StringFormat='类型: {0}'}"
+                           FontSize="11" Foreground="Gray" />
+            </StackPanel>
+        </Border>
+
+        <!-- ScottPlot Chart -->
+        <sp:WpfPlot Grid.Row="1" x:Name="SpectrumPlot"
+                    Visibility="{Binding HasData, Converter={StaticResource BoolToVisibility}}" />
+
+        <!-- No Data Placeholder -->
+        <TextBlock Grid.Row="1" Text="请选择一个载荷谱查看"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Foreground="Gray" FontStyle="Italic" FontSize="14"
+                   Visibility="{Binding HasData, Converter={StaticResource BoolToVisibility}, ConverterParameter=Inverse}" />
+
+        <!-- Legend / Stats -->
+        <Border Grid.Row="2" Padding="8,4" Background="{DynamicResource PanelHeaderBackgroundBrush}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="X: " Foreground="Gray" FontSize="11" />
+                <TextBlock Text="{Binding XLabel}" FontSize="11" Margin="0,0,16,0" />
+                <TextBlock Text="Y: " Foreground="Gray" FontSize="11" />
+                <TextBlock Text="{Binding YLabel}" FontSize="11" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
