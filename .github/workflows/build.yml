@@ -24,12 +24,12 @@ jobs:
       run: dotnet restore AAFSS.sln
     
     - name: Build
-      run: dotnet build AAFSS.sln --no-restore -c Release
+      run: dotnet build AAFSS.sln -c Release --no-restore
     
     - name: Publish App
-      run: dotnet publish src/AAFSS.App/AAFSS.App.csproj -c Release --no-restore -o publish/
+      run: dotnet publish src/AAFSS.App/AAFSS.App.csproj -c Release --no-build -o publish/
     
-    - name: Upload App
+    - name: Upload
       uses: actions/upload-artifact@v4
       with:
         name: AAFSS-App
