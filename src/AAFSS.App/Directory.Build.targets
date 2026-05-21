@@ -1,5 +1,4 @@
 <Project>
-  <!-- WPF _wpftmp workaround: skip temp CoreCompile to prevent source-generator CS0756/CS0111 -->
   <PropertyGroup>
     <_IsWpfTempProject Condition="$([System.String]::new('$(MSBuildProjectName)').ToLowerInvariant().Contains('wpftmp'))">true</_IsWpfTempProject>
   </PropertyGroup>
