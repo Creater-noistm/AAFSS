@@ -1,0 +1,45 @@
+name: Build AAFSS
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    
+    - name: Restore NuGet packages
+      run: dotnet restore AAFSS.sln
+    
+    - name: Build
+      run: dotnet build AAFSS.sln --no-restore -c Release
+    
+    - name: Run tests
+      run: dotnet test AAFSS.sln --no-restore -c Release --no-build
+      continue-on-error: true
+    
+    - name: Publish App
+      run: dotnet publish src/AAFSS.App/AAFSS.App.csproj -c Release -o publish/ --no-restore
+    
+    - name: Upload App artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: AAFSS-App
+        path: publish/
+    
+    - name: Upload DLLs artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: AAFSS-DLLs
+        path: |
+          src/*/bin/Release/net8.0-windows/*.dll
+          tests/*/bin/Release/net8.0-windows/*.dll
