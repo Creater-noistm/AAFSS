@@ -1,0 +1,11 @@
+<Project>
+  <PropertyGroup>
+    <_IsWpfTempProject Condition="$([System.String]::new('$(MSBuildProjectName)').ToLowerInvariant().Contains('wpftmp'))">true</_IsWpfTempProject>
+  </PropertyGroup>
+
+  <!-- Disable source generators for WPF temp project -->
+  <PropertyGroup Condition="'$(_IsWpfTempProject)' == 'true'">
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <RunAnalyzers>false</RunAnalyzers>
+  </PropertyGroup>
+</Project>
