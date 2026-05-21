@@ -185,7 +185,7 @@ public class SpectrumChartControl : Control
     private Border? _statusBar;
 
     // Color palette for series
-    private static readonly Color[] SeriesColors =
+    private static readonly ScottPlot.Color[] SeriesColors =
     [
         Color.FromRgb(66, 165, 245),   // Blue
         Color.FromRgb(239, 83, 80),    // Red

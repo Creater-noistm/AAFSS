@@ -68,7 +68,7 @@ public partial class RainflowHeatmapViewModel : DocumentViewModel
     }
 
     [RelayCommand]
-    private async Task LoadRainflowAsync(Guid resultId, string? name = null)
+    private async Task LoadRainflowAsync(Guid resultId, string name = "")
     {
         try
         {
