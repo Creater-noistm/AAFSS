@@ -7,7 +7,6 @@
     <AssemblyName>AAFSS.App</AssemblyName>
     <ApplicationIcon>Resources\Images\aafss_icon.ico</ApplicationIcon>
     <GenerateTemporaryTargetAssembly>false</GenerateTemporaryTargetAssembly>
-    <AlwaysCompileMarkupFilesInSeparateDomain>false</AlwaysCompileMarkupFilesInSeparateDomain>
   </PropertyGroup>
 
   <ItemGroup>
