@@ -20,27 +20,14 @@ jobs:
     - name: Restore
       run: dotnet restore AAFSS.sln
     
-    - name: Build libraries
-      run: |
-        dotnet build src/AAFSS.PluginContracts/AAFSS.PluginContracts.csproj -c Release --no-restore
-        dotnet build src/AAFSS.Core/AAFSS.Core.csproj -c Release --no-restore
-        dotnet build src/AAFSS.Infrastructure/AAFSS.Infrastructure.csproj -c Release --no-restore
+    - name: Build
+      run: dotnet build AAFSS.sln -c Release --no-restore
     
-    - name: Publish App (tolerate XAML errors)
-      run: dotnet publish src/AAFSS.App/AAFSS.App.csproj -c Release -o publish/ --no-restore
-      continue-on-error: true
+    - name: Publish App
+      run: dotnet publish src/AAFSS.App/AAFSS.App.csproj -c Release --no-build -o publish/
     
     - name: Upload App
       uses: actions/upload-artifact@v4
       with:
         name: AAFSS-App
         path: publish/
-    
-    - name: Upload DLLs
-      uses: actions/upload-artifact@v4
-      with:
-        name: AAFSS-Libraries
-        path: |
-          src/AAFSS.Core/bin/Release/net8.0-windows/AAFSS.Core.dll
-          src/AAFSS.Infrastructure/bin/Release/net8.0-windows/AAFSS.Infrastructure.dll
-          src/AAFSS.PluginContracts/bin/Release/net8.0-windows/AAFSS.PluginContracts.dll

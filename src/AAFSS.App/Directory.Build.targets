@@ -2,6 +2,12 @@
   <PropertyGroup>
     <_IsWpfTempProject Condition="$([System.String]::new('$(MSBuildProjectName)').ToLowerInvariant().Contains('wpftmp'))">true</_IsWpfTempProject>
   </PropertyGroup>
-  <Target Name="CoreCompile" Condition="'$(_IsWpfTempProject)' == 'true'" />
-  <Target Name="MarkupCompilePass2ForMainAssembly" />
+
+  <!-- Strip ALL analyzers (source generators) from temp project BEFORE they're loaded -->
+  <Target Name="StripTempAnalyzers" BeforeTargets="ResolveAssemblyReferences" Condition="'$(_IsWpfTempProject)' == 'true'">
+    <Message Importance="high" Text="[AAFSS] Removing analyzers from temp project" />
+    <ItemGroup>
+      <Analyzer Remove="@(Analyzer)" />
+    </ItemGroup>
+  </Target>
 </Project>
